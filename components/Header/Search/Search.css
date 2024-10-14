@@ -1,25 +1,20 @@
 .main-search-input {
+   border: 3px solid #6c6c6c;
    border-radius: 0.5rem;
    padding: 0.9rem 3rem;
    width: 100%;
    outline: none;
-   background: linear-gradient(135deg, #fa4860, #fce54b);
-   color: #fff;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 0, 0, 0.15);
+   color: #000;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 25px rgba(0, 0, 0, 0.1);
    background-clip: padding-box;
    position: relative;
+   font-weight: 600;
    transition: transform 0.2s, border-color 0.2s;
 }
 
-.main-search-input:hover,
-.main-search-input:focus {
-   border-color: transparent;
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.1);
-}
-
 .main-search-input::placeholder {
-   color: #fff;
-   font-weight: 500;
+   color: #000;
+   font-weight: 600;
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5),
       inset 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -37,23 +32,29 @@
 }
 
 .search-button {
-   margin-left: 0.5rem;
-   width: 2rem;
-   height: 2rem;
+   width: 1.5rem;
+   height: 1.5rem;
    aspect-ratio: 1;
    background: transparent;
    border-radius: 50%;
    position: absolute;
-   left: -0.5rem;
+   left: 0.9rem;
    top: 50%;
+   cursor: pointer;
    transform: translateY(-50%);
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5),
+      inset 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .search-button svg {
-   color: #fff;
-   font-weight: 900;
-   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5),
-      inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+   color: #000;
+}
+
+.main-search-input:hover,
+.main-search-input:active,
+.main-search-input:focus {
+   border-color: transparent;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .suggestions-list {

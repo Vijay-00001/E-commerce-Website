@@ -18,21 +18,13 @@ const MySwiper = () => {
    return (
       <SwiperComponent
          spaceBetween={50}
-         slidesPerView={1} // Show one slide at a time
+         slidesPerView={1}
          loop={true}
          autoplay={{ delay: 3000 }}
-         pagination={{ clickable: true }} // Enable dots (pagination)
-         effect="slide" // Enable 3D coverflow effect
-         parallax={true}
+         pagination={{ clickable: true }}
+         effect="fade"
          fadeEffect={{ crossFade: true }}
-         coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-         }}
-         modules={[Pagination, EffectCoverflow, Autoplay]} // Add required modules
+         modules={[Pagination, EffectCoverflow, Autoplay]}
          className="my-swiper"
       >
          <SwiperSlide>

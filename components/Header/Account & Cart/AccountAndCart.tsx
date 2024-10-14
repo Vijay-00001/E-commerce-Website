@@ -12,7 +12,7 @@ const AccountAndCart = () => {
          </div>
 
          <div className="col-span-2 flex items-center">
-            <span className="price my-auto">$ 0.00</span>
+            <span className="price my-auto">$ 9.00</span>
             <div className="relative flex items-center">
                <CiShoppingBasket className="account-icon" />
                <span className="item-count">0</span>

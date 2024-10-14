@@ -1,6 +1,6 @@
 .location {
    width: 100%;
-   background: linear-gradient(135deg, #ff4e50, #f9d423);
+   background: linear-gradient(135deg, #aeaeae, #3a3a3a);
    color: white;
    display: flex;
    justify-content: space-between;
@@ -16,10 +16,10 @@
 
 /* Add hover effect to enhance the 3D look */
 .location:hover {
-   transform: translateY(-5px);
+   transform: translateY(-3px);
    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
       12px 12px 30px rgba(0, 0, 0, 0.15);
-   background: linear-gradient(135deg, #f12711, #f5af19);
+   background: linear-gradient(135deg, #aeaeae, #3a3a3a);
 }
 
 /* Text Gradient Effect */

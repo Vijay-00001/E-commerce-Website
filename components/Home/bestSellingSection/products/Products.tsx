@@ -20,10 +20,11 @@ import {
 } from '@/components/ui/select';
 import Image from 'next/image';
 import Image_1 from '@/public/Products/image_1.jpg';
+import { FiHeart } from 'react-icons/fi';
 
 const Products = () => {
    return (
-      <div className="w-full py-3 px-1">
+      <div className="w-full py-1">
          <Card className="card w-full flex justify-between align-middle items-center">
             <div className="my-auto flex flex-col items-start">
                <h2 className="title">Best Selling</h2>
@@ -35,16 +36,21 @@ const Products = () => {
                See All
             </Button>
          </Card>
-         <div className="w-full h-[400px] flex justify-between gap-3 overflow-x-auto overflow-y-hidden mt-3">
-            <Card className="min-w-[241px] max-w-[241px] min-h-[370px] shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
-               <CardHeader className="p-1 rounded-xl">
+         <div className="w-full h-[441px] flex justify-between gap-7 overflow-x-auto overflow-y-hidden mt-3">
+            <Card className="flex flex-col justify-between min-w-[241px] max-w-[241px] min-h-[400px] shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
+               <CardHeader className="p-0 rounded-xl relative">
                   <Image
                      src={Image_1}
                      alt="Slide 1"
                      width={500}
-                     height={350}
-                     className="rounded-xl h-[200px] object-cover"
+                     height={401}
+                     className="rounded-xl h-[251px] object-cover"
                   />
+                  <div className="flex flex-col justify-between gap-5 items-center absolute right-4 top-3">
+                     <FiHeart className="w-7 h-7 text-black rounded-full cursor-pointer border p-1" />
+                     <FiHeart className="w-7 h-7 text-black rounded-full cursor-pointer border p-1" />
+                     <FiHeart className="w-7 h-7 text-black rounded-full cursor-pointer border p-1" />
+                  </div>
                </CardHeader>
                <CardContent className="p-2">
                   <CardTitle>Create project</CardTitle>

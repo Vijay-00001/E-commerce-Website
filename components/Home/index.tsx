@@ -4,7 +4,7 @@ import BestSellingSection from './bestSellingSection';
 
 const HomeComponent = () => {
    return (
-      <div className="w-full">
+      <div className="w-full px-11 py-7 min-h-min">
          <Swiper />
          <BestSellingSection />
       </div>

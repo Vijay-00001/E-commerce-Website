@@ -1,4 +1,5 @@
 import React from 'react';
+import '@/components/Navigation/productMenu/ProductsMenu.css';
 import { IoMenu } from 'react-icons/io5';
 import {
    Cloud,
@@ -37,10 +38,10 @@ const ProductsMenu = () => {
       <DropdownMenu>
          <DropdownMenuTrigger asChild>
             <div className="flex flex-col relative w-full all-categories">
-               <Button variant="normal" className="btn-3d">
+               <div className="btn-3d">
                   <IoMenu className="menu-icon" />
                   <span className="text-black">All Products</span>
-               </Button>
+               </div>
                <span className="product-label">Total 99 Products</span>
             </div>
          </DropdownMenuTrigger>

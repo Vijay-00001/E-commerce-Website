@@ -11,7 +11,7 @@ export default function Home() {
             <Header />
             <Navigation />
          </div>
-         <div className="container bg-white rounded-lg pt-3 pb-5 mt-[6px]">
+         <div className="container bg-white rounded-lg pt-3 pb-5 mt-5 max-h-max">
             <HomeComponent />
          </div>
       </>

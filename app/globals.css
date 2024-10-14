@@ -4,7 +4,7 @@
 
 body {
    font-family: var(--font-poppins);
-   background: linear-gradient(90deg, #fa4860, #fce54b);
+   background: linear-gradient(90deg, #e8e6e6, #dddbd7);
 }
 
 @layer utilities {

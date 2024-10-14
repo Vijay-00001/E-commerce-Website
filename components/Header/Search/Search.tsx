@@ -47,9 +47,7 @@ const Search = () => {
             placeholder="Type to search ..."
             className="main-search-input"
          />
-         <Button variant="normal" className="search-button">
-            <IoSearchOutline className="h-5 w-5 icon" />
-         </Button>
+         <IoSearchOutline className="h-5 w-5 search-button" />
          {suggestions.length > 0 && (
             <ul className="suggestions-list">
                {suggestions.map((suggestion, index) => (
