@@ -1,13 +1,13 @@
 import React from 'react';
-import '@/components/Header/Header.module.css';
+import '@/components/Header/Header.css';
 import Logo from '@/components/Header/Logo/Logo';
-import Language from '@/components/Header/Language/Language';
+import Location from '@/components/Header/Location/Location';
 import Search from '@/components/Header/Search/Search';
 import AccountAndCart from '@/components/Header/Account & Cart/AccountAndCart';
 
 const Header = () => {
    return (
-      <div className="container my-3 py-1 flex align-middle">
+      <div className="flex align-middle mb-3">
          <div className="w-full grid grid-cols-12 align-middle">
             {/* Logo section start */}
             <div className="col-span-2 flex justify-start my-auto">
@@ -15,11 +15,11 @@ const Header = () => {
             </div>
             {/* Logo section end */}
 
-            {/* Language section start */}
+            {/* Location section start */}
             <div className="col-span-2 my-auto">
-               <Language />
+               <Location />
             </div>
-            {/* Language section start */}
+            {/* Location section start */}
 
             {/* Search section start */}
             <div className="col-span-6 my-auto">

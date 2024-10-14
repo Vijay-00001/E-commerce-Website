@@ -1,20 +1,20 @@
 import { Button } from '@/components/ui/button';
 import React from 'react';
-import { IoIosMenu } from 'react-icons/io';
+import { IoMenu } from 'react-icons/io5';
 
 const ProductsMenu = () => {
    return (
-      <div className="flex flex-col relative w-full ">
+      <div className="flex flex-col relative w-full">
          <Button
             variant="normal"
-            className="border rounded-full text-lg px-5 pt-7 pb-9 gap-3"
+            className="btn-3d"
          >
-            <IoIosMenu className="w-5 h-5 text-black font-bold" />
+            <IoMenu className="menu-icon" />
             <span className="text-black">
                All Products
             </span>
          </Button>
-         <span className="border bg-white absolute px-3 py-1 rounded-full -bottom-4 left-8">
+         <span className="product-label">
             Total 99 Products
          </span>
       </div>

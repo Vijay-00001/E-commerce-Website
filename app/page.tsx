@@ -1,13 +1,15 @@
-import Header from "@/components/Header";
-import Navigation from "@/components/Navigation";
+import Header from '@/components/Header';
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
-  return (
-    <>
-      {/* <h1>Ecommerce Website</h1>
+   return (
+      <>
+         {/* <h1>Ecommerce Website</h1>
       <h2>Shree Ganeshay namah:</h2> */}
-      <Header />
-      <Navigation/>
-    </>
-  );
+         <div className="container bg-white rounded-lg pt-3 pb-5 mt-3">
+            <Header />
+            <Navigation />
+         </div>
+      </>
+   );
 }
