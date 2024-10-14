@@ -9,16 +9,14 @@ const AccountAndCart = () => {
          <div className="col-span-1">
             <Button
                variant="normal"
-               className="w-9 h-9 aspect-square rounded-full border border-black text-xl p-0"
+               className="w-9 h-9 aspect-square rounded-full border border-black text-xl p-0 icon"
             >
                <RxPerson className="font-bold text-gray-700" />
             </Button>
          </div>
 
          <div className="col-span-2 flex ">
-            <span className="mr-3 my-auto ">
-               $ 0.00
-            </span>
+            <span className="mr-3 my-auto ">$ 0.00</span>
             <div className="relative">
                <Button
                   variant="normal"

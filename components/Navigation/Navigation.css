@@ -1,3 +1,16 @@
+.all-categories {
+   border-radius: 50px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.all-categories:hover {
+   border-radius: 50px;
+
+   transform: translateY(-5px);
+   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25),
+      12px 12px 30px rgba(0, 0, 0, 0.2);
+}
+
 .btn-3d {
    border-radius: 50px;
    font-size: 1.125rem;
@@ -5,24 +18,13 @@
    display: flex;
    align-items: center;
    gap: 0.75rem;
-   background: linear-gradient(
-      135deg,
-      #ff4e50,
-      #f9d423
-   );
+   background: linear-gradient(135deg, #ff4e50, #f9d423);
    color: white;
    font-weight: bold;
    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
       10px 10px 20px rgba(0, 0, 0, 0.15);
-   transition: transform 0.3s ease,
-      box-shadow 0.3s ease;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
    cursor: pointer;
-}
-
-.btn-3d:hover {
-   transform: translateY(-5px);
-   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.25),
-      12px 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .menu-icon {
@@ -43,8 +45,4 @@
    left: 2.5rem;
    font-size: 0.875rem;
    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.product-label:hover {
-   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }

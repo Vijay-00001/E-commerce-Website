@@ -1,7 +1,7 @@
 import React from 'react';
 import '@/components/Navigation/Navigation.css';
-import Links from '@/components/Navigation/Links/Links';
 import ProductsMenu from '@/components/Navigation/ProductMenu/ProductsMenu';
+import { NavigationMenuLinks } from '@/components/Navigation/NavigationMenuLinks/NavigationMenuLinks';
 
 const Navigation = () => {
    return (
@@ -14,7 +14,7 @@ const Navigation = () => {
 
          {/* Links section start */}
          <div className="col-span-10 flex justify-end my-auto">
-            <Links />
+            <NavigationMenuLinks />
          </div>
          {/* Links section end */}
       </div>

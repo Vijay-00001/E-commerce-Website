@@ -1,0 +1,10 @@
+.navigation-menu-link {
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.navigation-menu-link:hover,
+.navigation-menu-link:focus {
+   color: #f03e3e;
+   background-color: rgba(240, 62, 62, 0.1);
+}

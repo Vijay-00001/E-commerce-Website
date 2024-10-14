@@ -7,7 +7,7 @@ import AccountAndCart from '@/components/Header/Account & Cart/AccountAndCart';
 
 const Header = () => {
    return (
-      <div className="flex align-middle mb-3">
+      <div className="flex align-middle mb-3 bg-[var(--font-roboto)]">
          <div className="w-full grid grid-cols-12 align-middle">
             {/* Logo section start */}
             <div className="col-span-2 flex justify-start my-auto">
