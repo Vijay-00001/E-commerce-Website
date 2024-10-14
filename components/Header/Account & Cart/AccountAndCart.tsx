@@ -1,33 +1,21 @@
-import { Button } from '@/components/ui/button';
 import React from 'react';
+import '@/components/Header/Account & Cart/AccountAndCart.css';
+import { Button } from '@/components/ui/button';
 import { RxPerson } from 'react-icons/rx';
 import { CiShoppingBasket } from 'react-icons/ci';
 
 const AccountAndCart = () => {
    return (
-      <div className="grid grid-cols-3 gap-7">
-         <div className="col-span-1">
-            <Button
-               variant="normal"
-               className="w-9 h-9 aspect-square rounded-full border border-black text-xl p-0 icon"
-            >
-               <RxPerson className="font-bold text-gray-700" />
-            </Button>
+      <div className="grid grid-cols-3 gap-7 my-auto">
+         <div className="col-span-1 flex justify-center">
+            <RxPerson className="account-icon" />
          </div>
 
-         <div className="col-span-2 flex ">
-            <span className="mr-3 my-auto ">$ 0.00</span>
-            <div className="relative">
-               <Button
-                  variant="normal"
-                  className="w-9 h-9 aspect-square rounded-full border border-black text-xl p-0"
-                  aria-label="Shopping Basket"
-               >
-                  <CiShoppingBasket className="h-5 w-5 text-gray-600" />
-               </Button>
-               <span className="w-5 h-5 bg-red-600 text-sm text-center text-white bg-red rounded-full absolute -top-2 -right-1 flex items-center justify-center">
-                  0
-               </span>
+         <div className="col-span-2 flex items-center">
+            <span className="price my-auto">$ 0.00</span>
+            <div className="relative flex items-center">
+               <CiShoppingBasket className="account-icon" />
+               <span className="item-count">0</span>
             </div>
          </div>
       </div>

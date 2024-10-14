@@ -1,0 +1,86 @@
+.card {
+   background: #ffffff; /* White background for the card */
+   padding: 1rem; /* Padding around the content */
+   border-radius: 0.5rem; /* Rounded corners */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+   transform: translateY(-5px); /* Lift effect on hover */
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.title {
+   font-size: 1.5rem; /* Font size for the title */
+   font-weight: bold; /* Bold font weight */
+   color: #333; /* Dark color for better visibility */
+   margin: 0; /* Remove default margin */
+}
+
+.description {
+   font-size: 1rem; /* Font size for the description */
+   color: #666; /* Gray color for description */
+   margin: 0; /* Remove default margin */
+}
+
+.see-all-button {
+   margin-left: 1rem; /* Margin for spacing */
+   background: linear-gradient(
+      135deg,
+      #fa4860,
+      #fce54b
+   ); /* Gradient background */
+   color: white; /* White text color */
+   padding: 0.5rem 1rem; /* Padding for the button */
+   border: none; /* Remove border */
+   border-radius: 0.5rem; /* Rounded corners */
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for button */
+   cursor: pointer; /* Pointer cursor */
+   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.see-all-button:hover {
+   transform: scale(1.05); /* Slight zoom effect on hover */
+   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* ==================================================================================== */
+/* Product Style  */
+/* ==================================================================================== */
+.card {
+   position: relative;
+   border-radius: 0.5rem; /* Rounded corners */
+   background-color: #ffffff; /* Card background */
+   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.card:hover {
+   transform: translateY(-5px); /* Lift the card on hover */
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.overflow-x-auto {
+   padding: 0.5rem; /* Padding around the horizontal scroll area */
+}
+
+.text-blue-600 {
+   color: #3b82f6; /* Blue color for 'See More' text */
+}
+
+.bg-blue-600 {
+   background-color: #3b82f6; /* Background color for the button */
+}
+
+.bg-blue-700 {
+   background-color: #2563eb; /* Darker blue for hover effect */
+}
+
+.rounded-lg {
+   border-radius: 0.5rem; /* Rounded corners for buttons */
+}
+
+/* Remove scrollbar styles */
+::-webkit-scrollbar {
+   display: none;
+}

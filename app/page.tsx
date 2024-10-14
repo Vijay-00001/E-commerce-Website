@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Navigation from '@/components/Navigation';
+import HomeComponent from '@/components/Home';
 
 export default function Home() {
    return (
@@ -9,6 +10,9 @@ export default function Home() {
          <div className="container bg-white rounded-lg pt-3 pb-5 mt-3">
             <Header />
             <Navigation />
+         </div>
+         <div className="container bg-white rounded-lg pt-3 pb-5 mt-[6px]">
+            <HomeComponent />
          </div>
       </>
    );

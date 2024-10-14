@@ -1,20 +1,70 @@
-import { Button } from '@/components/ui/button';
+'use client';
+
 import React from 'react';
-import { IoSearchOutline } from "react-icons/io5";
+import '@/components/Header/Search/Search.css';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { IoSearchOutline } from 'react-icons/io5';
 
 const Search = () => {
-  return (
-    <div className="w-full relative">
-      <input
-        type="text"
-        placeholder="Type to search ..."
-        className="border rounded py-2 px-4 w-full outline-none border-gray-500"
-      />
-      <Button variant="normal" className="ml-2 w-8 h-8 aspect-square bg-transparent rounded-full absolute right-1 top-[5px]">
-        <IoSearchOutline className="h-5 w-5 text-gray-600" />
-      </Button>
-    </div>
-  );
+   const [searchTerm, setSearchTerm] = useState('');
+   const [suggestions, setSuggestions] = useState<string[]>([]);
+
+   const handleChange = (e: any) => {
+      const value = e.target.value;
+      setSearchTerm(value);
+
+      // Example suggestions; in a real app, you could fetch suggestions based on the input
+      const exampleSuggestions = [
+         'Apple',
+         'Banana',
+         'Cherry',
+         'Date',
+         'Elderberry',
+         'Fig',
+         'Grape',
+      ];
+      setSuggestions(
+         value
+            ? exampleSuggestions.filter(s =>
+                 s.toLowerCase().includes(value.toLowerCase())
+              )
+            : []
+      );
+   };
+
+   const handleSuggestionClick = (suggestion: string) => {
+      setSearchTerm(suggestion);
+      setSuggestions([]);
+   };
+
+   return (
+      <div className="w-[90%] mx-auto relative">
+         <input
+            type="text"
+            value={searchTerm}
+            onChange={handleChange}
+            placeholder="Type to search ..."
+            className="main-search-input"
+         />
+         <Button variant="normal" className="search-button">
+            <IoSearchOutline className="h-5 w-5 icon" />
+         </Button>
+         {suggestions.length > 0 && (
+            <ul className="suggestions-list">
+               {suggestions.map((suggestion, index) => (
+                  <li
+                     key={index}
+                     onClick={() => handleSuggestionClick(suggestion)}
+                     className="suggestion-item"
+                  >
+                     {suggestion}
+                  </li>
+               ))}
+            </ul>
+         )}
+      </div>
+   );
 };
 
 export default React.memo(Search);

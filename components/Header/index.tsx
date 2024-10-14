@@ -7,31 +7,23 @@ import AccountAndCart from '@/components/Header/Account & Cart/AccountAndCart';
 
 const Header = () => {
    return (
-      <div className="flex align-middle mb-3 bg-[var(--font-roboto)]">
-         <div className="w-full grid grid-cols-12 align-middle">
-            {/* Logo section start */}
-            <div className="col-span-2 flex justify-start my-auto">
+      <div className="flex align-middle mb-3 px-3 ">
+         <div className="w-full grid grid-cols-12 gap-4 align-middle ">
+            <div className="col-span-12 sm:col-span-2 flex justify-start my-auto ">
                <Logo />
             </div>
-            {/* Logo section end */}
 
-            {/* Location section start */}
-            <div className="col-span-2 my-auto">
+            <div className="col-span-12 sm:col-span-2 m-auto ">
                <Location />
             </div>
-            {/* Location section start */}
 
-            {/* Search section start */}
-            <div className="col-span-6 my-auto">
+            <div className="col-span-12 sm:col-span-6 my-auto ">
                <Search />
             </div>
-            {/* Search section start */}
 
-            {/* Account & Cart section start */}
-            <div className="col-span-2 flex justify-end my-auto">
+            <div className="col-span-12 sm:col-span-2 flex justify-end my-auto ">
                <AccountAndCart />
             </div>
-            {/* Account & Cart section start */}
          </div>
       </div>
    );
