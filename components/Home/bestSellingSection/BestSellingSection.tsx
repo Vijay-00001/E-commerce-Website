@@ -4,7 +4,7 @@ import Products from './products/Products';
 
 const BestSellingSection = () => {
    return (
-      <div className="grid grid-cols-12 gap-3 mt-20 rounded-lg">
+      <div className="grid grid-cols-12 gap-3 my-7 rounded-lg">
          <div className="col-span-3 ">
             <Offers />
          </div>

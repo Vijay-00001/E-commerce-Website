@@ -1,0 +1,37 @@
+.all-categories {
+   @apply border-b-2 rounded-full transition-transform duration-300 ease-in-out relative;
+   transition: all 0.3s ease;
+   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.all-categories:hover {
+   @apply transform -translate-y-1 shadow-lg bg-skyDark;
+}
+
+.categories-main-label {
+   @apply rounded-full text-lg py-3 px-5 flex items-center gap-3 font-bold shadow-lg transition-transform duration-300 ease-in-out cursor-pointer;
+   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.categories-title {
+   @apply text-lg font-extrabold m-0;
+}
+
+.categories-drop-down-icon {
+   @apply w-7 h-7 font-bold text-skyDark inline-block rounded-full;
+   transition: all 0.3s ease;
+}
+
+.all-categories:hover .categories-title,
+.all-categories:hover .categories-drop-down-icon {
+   @apply text-white;
+   transform: translateY(-5px);
+}
+
+.categories-drop-down-icon:active {
+   transform: rotate(180deg);
+}
+
+.categories-sub-label {
+   @apply absolute py-1 px-2 rounded-full bottom-[-15px] left-9 text-sm shadow-md bg-white border-b-2;
+}

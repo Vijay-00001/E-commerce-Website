@@ -1,18 +1,26 @@
 'use client';
 
 import React from 'react';
-import '@/components/Home/swiper/swiper.css';
+import '@/components/swiper/swiper.css';
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import { Pagination, EffectCoverflow, Autoplay } from 'swiper/modules';
+import {
+   Pagination,
+   EffectCoverflow,
+   Autoplay,
+   Navigation,
+} from 'swiper/modules';
 import Image from 'next/image';
 import Image_1 from '@/public/Products/image_1.jpg';
 import Image_2 from '@/public/Products/image_2.jpg';
 import Image_3 from '@/public/Products/image_3.jpg';
 import Image_4 from '@/public/Products/image_4.jpg';
 import Image_5 from '@/public/Products/image_5.jpg';
+import { IoChevronForwardOutline } from 'react-icons/io5';
+import { IoChevronBackOutline } from 'react-icons/io5';
 
 const MySwiper = () => {
    return (
@@ -22,9 +30,13 @@ const MySwiper = () => {
          loop={true}
          autoplay={{ delay: 3000 }}
          pagination={{ clickable: true }}
+         navigation={{
+            prevEl: '.custom-swiper-button-prev', // Custom classes
+            nextEl: '.custom-swiper-button-next',
+         }}
          effect="fade"
          fadeEffect={{ crossFade: true }}
-         modules={[Pagination, EffectCoverflow, Autoplay]}
+         modules={[Pagination, EffectCoverflow, Autoplay, Navigation]}
          className="my-swiper"
       >
          <SwiperSlide>
@@ -72,6 +84,14 @@ const MySwiper = () => {
                className="slide-image"
             />
          </SwiperSlide>
+         <div className="custom-dark-background"></div>
+
+         <div className="custom-swiper-button-prev">
+            <IoChevronBackOutline />
+         </div>
+         <div className="custom-swiper-button-next">
+            <IoChevronForwardOutline />
+         </div>
       </SwiperComponent>
    );
 };

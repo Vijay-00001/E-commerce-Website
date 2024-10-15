@@ -1,0 +1,48 @@
+.my-swiper {
+   @apply relative w-[95%] h-[201px] max-h-[500px] rounded-[10px] pb-[30px] shadow-[0_15px_30px_rgba(0,0,0,0.5)];
+}
+
+.slide-image {
+   @apply w-full h-full object-cover rounded-[10px] shadow-[0_15px_30px_rgba(0,0,0,0.5)];
+}
+
+.swiper-pagination-bullet {
+   @apply bg-white opacity-100 w-[12px] h-[12px] mx-[5px] transition-colors duration-300 ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+   @apply bg-skyDark;
+}
+
+.swiper-slide {
+   @apply transition-transform duration-300 ease-in-out;
+}
+
+.custom-dark-background {
+   @apply absolute top-0 left-0 w-full h-full z-10;
+   background: rgba(0, 0, 0, 0.3);
+}
+
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+   @apply w-[21px] h-[21px] text-blurGray font-extralight py-[0.5rem] px-[1rem] rounded-[0.5rem] absolute top-1/2 translate-y-[-50%] z-[10] cursor-pointer text-[1.25rem] transition-colors duration-300 ease-in-out;
+}
+
+.custom-swiper-button-prev {
+   @apply left-[0px];
+}
+
+.custom-swiper-button-next {
+   @apply right-[10px];
+}
+
+.custom-swiper-button-prev:hover,
+.custom-swiper-button-next:hover {
+   @apply text-skyDark;
+}
+
+@media (min-width: 768px) {
+   .my-swiper {
+      @apply h-[500px];
+   }
+}

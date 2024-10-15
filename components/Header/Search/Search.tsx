@@ -1,68 +1,53 @@
 'use client';
 
-import React from 'react';
-import '@/components/Header/Search/Search.css';
+import React, { useCallback, useMemo, useState } from 'react';
+import SearchBar from '@/components/search/Search';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
 import { IoSearchOutline } from 'react-icons/io5';
 
-const Search = () => {
+interface SearchProps {
+   suggestions?: string[];
+}
+
+const Search: React.FC<SearchProps> = ({ suggestions = [] }) => {
    const [searchTerm, setSearchTerm] = useState('');
-   const [suggestions, setSuggestions] = useState<string[]>([]);
+   const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
 
-   const handleChange = (e: any) => {
-      const value = e.target.value;
-      setSearchTerm(value);
+   const handleChange = useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+         const value = e.target.value;
+         setSearchTerm(value);
 
-      // Example suggestions; in a real app, you could fetch suggestions based on the input
-      const exampleSuggestions = [
-         'Apple',
-         'Banana',
-         'Cherry',
-         'Date',
-         'Elderberry',
-         'Fig',
-         'Grape',
-      ];
-      setSuggestions(
-         value
-            ? exampleSuggestions.filter(s =>
-                 s.toLowerCase().includes(value.toLowerCase())
-              )
-            : []
-      );
-   };
-
-   const handleSuggestionClick = (suggestion: string) => {
-      setSearchTerm(suggestion);
-      setSuggestions([]);
-   };
-
-   return (
-      <div className="w-[90%] mx-auto relative">
-         <input
-            type="text"
-            value={searchTerm}
-            onChange={handleChange}
-            placeholder="Type to search ..."
-            className="main-search-input"
-         />
-         <IoSearchOutline className="h-5 w-5 search-button" />
-         {suggestions.length > 0 && (
-            <ul className="suggestions-list">
-               {suggestions.map((suggestion, index) => (
-                  <li
-                     key={index}
-                     onClick={() => handleSuggestionClick(suggestion)}
-                     className="suggestion-item"
-                  >
-                     {suggestion}
-                  </li>
-               ))}
-            </ul>
-         )}
-      </div>
+         setFilteredSuggestions(
+            value
+               ? suggestions.filter(s =>
+                    s.toLowerCase().includes(value.toLowerCase())
+                 )
+               : []
+         );
+      },
+      [suggestions]
    );
+
+   const handleSuggestionClick = useCallback((suggestion: string) => {
+      setSearchTerm(suggestion);
+      setFilteredSuggestions([]);
+   }, []);
+
+   const handleSearch = useCallback((query: string) => {
+      console.log('Searching for:', query);
+   }, []);
+
+   const searchBarProps = useMemo(
+      () => ({
+         suggestions: filteredSuggestions,
+         onSearch: handleSearch,
+         placeholder: 'Search for items...',
+      }),
+      [filteredSuggestions, handleSearch]
+   );
+
+   return <SearchBar {...searchBarProps} />;
 };
 
 export default React.memo(Search);

@@ -1,10 +1,14 @@
+.navigation-menu-list {
+   @apply gap-3 mr-5;
+}
+
 .navigation-menu-link {
-   font-weight: bold;
-   text-transform: uppercase;
+   @apply border-b-2 border-skyDark rounded-md px-3 py-2 text-sm font-bold text-skyDark uppercase transition-all duration-300;
+   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .navigation-menu-link:hover,
 .navigation-menu-link:focus {
-   color: #f03e3e;
-   background-color: rgba(240, 62, 62, 0.1);
+   @apply text-white bg-skyDark shadow-lg;
+   transform: translateY(-3px);
 }

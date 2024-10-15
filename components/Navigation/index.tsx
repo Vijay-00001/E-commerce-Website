@@ -1,19 +1,18 @@
 import React from 'react';
-import '@/components/Navigation/Navigation.css';
-import ProductsMenu from '@/components/Navigation/productMenu/ProductsMenu';
 import { NavigationMenuLinks } from '@/components/Navigation/navigationMenuLinks/NavigationMenuLinks';
+import CategoriesButton from '@/components/Navigation/categoriesButton/CategoriesButton';
 
 const Navigation = () => {
    return (
       <div className="px-7 pt-5 grid grid-cols-12 align-middle my-auto">
          {/* ProductsMenu section start */}
-         <div className="col-span-2 flex justify-start my-auto">
-            <ProductsMenu />
+         <div className="col-span-3 flex justify-start my-auto">
+            <CategoriesButton />
          </div>
          {/* ProductsMenu section end */}
 
          {/* Links section start */}
-         <div className="col-span-10 flex justify-end my-auto">
+         <div className="col-span-9 flex justify-end items-end">
             <NavigationMenuLinks />
          </div>
          {/* Links section end */}

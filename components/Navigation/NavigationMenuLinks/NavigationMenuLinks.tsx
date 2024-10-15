@@ -78,7 +78,7 @@ const ListItem = React.forwardRef<
 export function NavigationMenuLinks() {
    return (
       <NavigationMenu>
-         <NavigationMenuList>
+         <NavigationMenuList className="navigation-menu-list">
             <NavigationMenuItem>
                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
@@ -92,14 +92,16 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Man
                </NavigationMenuTrigger>
-               <NavigationMenuContent>
+               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
+                  {' '}
+                  {/* Background color and margin here */}
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                      {components.map(component => (
                         <ListItem
                            key={component.title}
                            title={component.title}
                            href={component.href}
-                           className="navigation-menu-link" // Apply class here
+                           className="navigation-menu-link"
                         >
                            {component.description}
                         </ListItem>
@@ -111,14 +113,14 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Woman
                </NavigationMenuTrigger>
-               <NavigationMenuContent>
+               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                      {components.map(component => (
                         <ListItem
                            key={component.title}
                            title={component.title}
                            href={component.href}
-                           className="navigation-menu-link" // Apply class here
+                           className="navigation-menu-link"
                         >
                            {component.description}
                         </ListItem>
@@ -130,14 +132,14 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Beauty
                </NavigationMenuTrigger>
-               <NavigationMenuContent>
+               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                      {components.map(component => (
                         <ListItem
                            key={component.title}
                            title={component.title}
                            href={component.href}
-                           className="navigation-menu-link" // Apply class here
+                           className="navigation-menu-link"
                         >
                            {component.description}
                         </ListItem>
@@ -149,33 +151,14 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Watches
                </NavigationMenuTrigger>
-               <NavigationMenuContent>
+               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                      {components.map(component => (
                         <ListItem
                            key={component.title}
                            title={component.title}
                            href={component.href}
-                           className="navigation-menu-link" // Apply class here
-                        >
-                           {component.description}
-                        </ListItem>
-                     ))}
-                  </ul>
-               </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-               <NavigationMenuTrigger className="navigation-menu-link">
-                  Kids
-               </NavigationMenuTrigger>
-               <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                     {components.map(component => (
-                        <ListItem
-                           key={component.title}
-                           title={component.title}
-                           href={component.href}
-                           className="navigation-menu-link" // Apply class here
+                           className="navigation-menu-link"
                         >
                            {component.description}
                         </ListItem>
@@ -187,14 +170,14 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Gifts
                </NavigationMenuTrigger>
-               <NavigationMenuContent>
+               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                      {components.map(component => (
                         <ListItem
                            key={component.title}
                            title={component.title}
                            href={component.href}
-                           className="navigation-menu-link" // Apply class here
+                           className="navigation-menu-link"
                         >
                            {component.description}
                         </ListItem>

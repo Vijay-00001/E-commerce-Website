@@ -14,38 +14,31 @@ const config: Config = {
             foreground: 'hsl(var(--foreground))',
             card: {
                DEFAULT: 'hsl(var(--card))',
-               foreground:
-                  'hsl(var(--card-foreground))',
+               foreground: 'hsl(var(--card-foreground))',
             },
             popover: {
                DEFAULT: 'hsl(var(--popover))',
-               foreground:
-                  'hsl(var(--popover-foreground))',
+               foreground: 'hsl(var(--popover-foreground))',
             },
             primary: {
                DEFAULT: 'hsl(var(--primary))',
-               foreground:
-                  'hsl(var(--primary-foreground))',
+               foreground: 'hsl(var(--primary-foreground))',
             },
             secondary: {
                DEFAULT: 'hsl(var(--secondary))',
-               foreground:
-                  'hsl(var(--secondary-foreground))',
+               foreground: 'hsl(var(--secondary-foreground))',
             },
             muted: {
                DEFAULT: 'hsl(var(--muted))',
-               foreground:
-                  'hsl(var(--muted-foreground))',
+               foreground: 'hsl(var(--muted-foreground))',
             },
             accent: {
                DEFAULT: 'hsl(var(--accent))',
-               foreground:
-                  'hsl(var(--accent-foreground))',
+               foreground: 'hsl(var(--accent-foreground))',
             },
             destructive: {
                DEFAULT: 'hsl(var(--destructive))',
-               foreground:
-                  'hsl(var(--destructive-foreground))',
+               foreground: 'hsl(var(--destructive-foreground))',
             },
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',
@@ -58,14 +51,14 @@ const config: Config = {
                '5': 'hsl(var(--chart-5))',
             },
             // Custom added colors
-            carnation: '#fa4860',
-            red: '#f3030e',
-            gorse: '#fce54b',
-            doveGray: '#6c6c6c',
-            silver: '#bcbcbc',
-            black: '#020202',
-            merlot: '#871c27',
-            mainBackground: '#F2F2F2',
+            black: 'var(--black)',
+            darkGray: 'var(--dark-gray)',
+            charcoal: 'var(--charcoal)',
+            slateGray: 'var(--slate-gray)',
+            skyDark: 'var(--sky-dark)',
+            blurGray: 'var(--blur-gray)',
+            lightGray: 'var(--light-gray)',
+            heayGray: 'var(--heay-gray)',
          },
          borderRadius: {
             lg: 'var(--radius)',
@@ -77,11 +70,11 @@ const config: Config = {
             inter: ['Inter', 'sans-serif'],
             poppins: ['Poppins', 'sans-serif'],
             roboto: ['Roboto', 'sans-serif'],
-            merriweather: [
-               'Merriweather',
-               'serif',
-            ],
+            merriweather: ['Merriweather', 'serif'],
             lato: ['Lato', 'sans-serif'],
+         },
+         boxShadow: {
+            'box-shadow': '0 15px 30px rgba(0, 0, 0, 0.3)',
          },
       },
    },

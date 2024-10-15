@@ -1,12 +1,11 @@
 import React from 'react';
 import '@/components/Header/Account & Cart/AccountAndCart.css';
-import { Button } from '@/components/ui/button';
 import { RxPerson } from 'react-icons/rx';
 import { CiShoppingBasket } from 'react-icons/ci';
 
 const AccountAndCart = () => {
    return (
-      <div className="grid grid-cols-3 gap-7 my-auto">
+      <div className="grid grid-cols-3 gap-7">
          <div className="col-span-1 flex justify-center">
             <RxPerson className="account-icon" />
          </div>

@@ -6,21 +6,29 @@ import {
    Dialog,
    DialogContent,
    DialogDescription,
+   DialogHeader,
    DialogTrigger,
 } from '@/components/ui/dialog';
 import { useGetCountriesQuery } from '@/redux/api/apiSlice';
 import { useForm } from 'react-hook-form';
-import { IoSearchOutline } from 'react-icons/io5';
 import { debounce } from 'lodash';
+import SearchBar from '@/components/search/Search';
+
+interface CountryData {
+   iso2: string;
+   iso3: string;
+   country: string;
+   cities: string[];
+}
 
 const Location = () => {
-   const { data: countries, isLoading: countriesLoading } =
+   const [searchTerm, setSearchTerm] = useState<string>('');
+   const { data: countries = [], isLoading: countriesLoading } =
       useGetCountriesQuery({ limit: 10 });
    const { register, watch } = useForm();
-   const [searchTerm, setSearchTerm] = useState('');
 
    const debouncedSearch = useCallback(
-      debounce(value => setSearchTerm(value), 300),
+      debounce((value: string) => setSearchTerm(value), 300),
       []
    );
 
@@ -28,62 +36,63 @@ const Location = () => {
 
    useEffect(() => {
       debouncedSearch(searchValue);
-      return () => debouncedSearch.cancel();
+      return () => {
+         debouncedSearch.cancel();
+      };
    }, [searchValue, debouncedSearch]);
 
+   const handleSearch = (value: string) => {
+      setSearchTerm(value);
+   };
+
+   // Safely access countries data and filter based on searchTerm
+   const countrySuggestions =
+      countries?.data?.map((country: CountryData) => country.country) || [];
+
+   const filteredCountries = countrySuggestions
+      ? countrySuggestions.filter(
+           (country: String) =>
+              typeof country === 'string' &&
+              country.toLowerCase().includes(searchTerm)
+        )
+      : [];
+
    return (
-      !countriesLoading && (
-         <Dialog>
-            <DialogTrigger className="location">
-               <div className="flex flex-col justify-start items-start">
-                  <span className="text-[14px]">Your Location</span>
-                  <span className="font-bold">{'India'}</span>
-               </div>
-               <div className="grid-cols-1 m-0 p-0 flex justify-end">
-                  <IoIosArrowDown className="w-5 h-5 text-gray-500" />
-               </div>
-            </DialogTrigger>
+      <Dialog>
+         <DialogTrigger className="location">
+            <div className="flex flex-col justify-start items-start">
+               <span className="text-[14px] text-blurGray">Your Location</span>
+               <span className="selected-location">
+                  {searchTerm || 'India'}
+               </span>
+            </div>
+            <IoIosArrowDown className="drop-down-icon" />
+         </DialogTrigger>
+
+         {!countriesLoading && (
             <DialogContent>
-               <div className="dialog-title">
-                  <h3>Choose Your Delivery Location</h3>
-               </div>
-               <p className="dialog-title">
-                  Enter Your Address and We will Specify the offer for your
-                  area.
-               </p>
+               <DialogHeader>
+                  <h3 className="dialog-title">
+                     Choose Your Delivery Location
+                  </h3>
+                  <p className="dialog-description">
+                     Enter Your Address and We will Specify the offer for your
+                     area.
+                  </p>
+               </DialogHeader>
                <DialogDescription className="dialog-box">
-                  <div className="search-bar">
-                     <IoSearchOutline className="icon" />
-                     <input
-                        type="text"
-                        placeholder="Type to search ..."
-                        className="search-input"
-                        {...register('search')}
-                        autoComplete="off"
-                     />
-                  </div>
-                  <div className="country-list">
-                     <ul>
-                        {(searchTerm
-                           ? countries?.data?.filter(
-                                (item: any) =>
-                                   item?.country &&
-                                   item.country
-                                      .toLowerCase()
-                                      .includes(searchTerm.toLowerCase())
-                             )
-                           : countries?.data
-                        ).map((item: any, index: number) => (
-                           <li key={index} className={`country-item`}>
-                              {item.country}
-                           </li>
-                        ))}
-                     </ul>
-                  </div>
+                  <SearchBar
+                     suggestions={
+                        searchTerm ? filteredCountries : countrySuggestions
+                     }
+                     onSearch={handleSearch}
+                     placeholder="Type to search countries..."
+                     {...register('search')}
+                  />
                </DialogDescription>
             </DialogContent>
-         </Dialog>
-      )
+         )}
+      </Dialog>
    );
 };
 

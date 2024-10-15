@@ -1,5 +1,5 @@
 import React from 'react';
-import '@/components/Navigation/productMenu/ProductsMenu.css';
+import '@/components/Navigation/categoriesButton/CategoriesButton.css';
 import { IoMenu } from 'react-icons/io5';
 import {
    Cloud,
@@ -17,7 +17,6 @@ import {
    UserPlus,
    Users,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
    DropdownMenu,
    DropdownMenuContent,
@@ -32,20 +31,21 @@ import {
    DropdownMenuSubTrigger,
    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { IoIosArrowDown } from 'react-icons/io';
 
-const ProductsMenu = () => {
+const CategoriesButton = () => {
    return (
       <DropdownMenu>
          <DropdownMenuTrigger asChild>
-            <div className="flex flex-col relative w-full all-categories">
-               <div className="btn-3d">
-                  <IoMenu className="menu-icon" />
-                  <span className="text-black">All Products</span>
+            <div className="all-categories">
+               <div className="categories-main-label">
+                  <span className="categories-title">All Categories</span>
+                  <IoIosArrowDown className="categories-drop-down-icon" />
                </div>
-               <span className="product-label">Total 99 Products</span>
+               <span className="categories-sub-label">Total 99 Products</span>
             </div>
          </DropdownMenuTrigger>
-         <DropdownMenuContent className="w-56">
+         <DropdownMenuContent className="mt-6">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
@@ -129,4 +129,4 @@ const ProductsMenu = () => {
    );
 };
 
-export default React.memo(ProductsMenu);
+export default React.memo(CategoriesButton);
