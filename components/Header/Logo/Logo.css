@@ -1,0 +1,28 @@
+.link-container {
+   @apply w-full block;
+}
+
+.flex-container {
+   @apply flex justify-between items-center transition-shadow duration-300;
+}
+
+.title {
+   @apply text-3xl font-bold bg-clip-text text-transparent;
+   letter-spacing: 0.2rem;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+   transition: text-shadow 0.3s ease;
+}
+
+.subtitle {
+   @apply flex justify-end text-sm font-semibold;
+   margin-top: -0.7rem;
+   letter-spacing: 0.033rem;
+   color: #646161;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+   transition: text-shadow 0.3s ease;
+}
+
+.link-container:hover {
+   transform: translateY(-3px);
+   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}

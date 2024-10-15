@@ -1,16 +1,24 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import WebsiteLogo from '@/public/Images/logo.png';
+import '@/components/Header/logo/Logo.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import Basket from '@/public/Images/basket.png';
 
 const Logo = () => {
    return (
-      <div className="">
-         <Link href="/">
-            <Image src={WebsiteLogo} alt="Logo" width={145} height={100} />
-            <span className="text-gray-700">A-Z Shopping Store</span>
-         </Link>
-      </div>
+      <Link href="/" className="link-container ">
+         <div className="flex-container">
+            <Image
+               src={Basket}
+               alt="Logo"
+               width={71}
+               height={71}
+               className="logo"
+            />
+            <h2 className="title">Market</h2>
+         </div>
+         <span className="subtitle">A-Z Shopping Market</span>
+      </Link>
    );
 };
 
