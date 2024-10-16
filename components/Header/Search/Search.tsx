@@ -2,8 +2,6 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import SearchBar from '@/components/search/Search';
-import { Button } from '@/components/ui/button';
-import { IoSearchOutline } from 'react-icons/io5';
 
 interface SearchProps {
    suggestions?: string[];

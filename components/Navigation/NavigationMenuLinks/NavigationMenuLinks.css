@@ -3,8 +3,7 @@
 }
 
 .navigation-menu-link {
-   @apply border-b-2 border-skyDark rounded-md px-3 py-2 text-sm font-bold text-skyDark uppercase transition-all duration-300;
-   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+   @apply border-b-2 border-skyDark rounded-md px-3 py-2 text-sm font-bold text-skyDark uppercase transition-all duration-300 ease-in-out;
 }
 
 .navigation-menu-link:hover,

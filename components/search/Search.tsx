@@ -20,7 +20,6 @@ const SearchBar = ({
    const searchTerm = watch('search', '');
 
    useEffect(() => {
-      // Debounce the search term update
       const handler = debounce((term: string) => {
          onSearch(term);
          filterSuggestions(term);
@@ -47,9 +46,9 @@ const SearchBar = ({
    };
 
    const handleSuggestionClick = (suggestion: string) => {
-      setValue('search', suggestion); // Update form value
-      onSearch(suggestion); // Call onSearch with selected suggestion
-      setFilteredSuggestions([]); // Clear suggestions
+      setValue('search', suggestion);
+      onSearch(suggestion);
+      setFilteredSuggestions([]);
    };
 
    return (

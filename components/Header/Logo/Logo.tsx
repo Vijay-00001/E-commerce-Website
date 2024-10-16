@@ -7,17 +7,17 @@ import Basket from '@/public/Images/basket.png';
 const Logo = () => {
    return (
       <Link href="/" className="link-container ">
+         <Image
+            src={Basket}
+            alt="Logo"
+            width={71}
+            height={71}
+            className="logo"
+         />
          <div className="flex-container">
-            <Image
-               src={Basket}
-               alt="Logo"
-               width={71}
-               height={71}
-               className="logo"
-            />
             <h2 className="title">Market</h2>
+            <span className="subtitle">A-Z Shopping</span>
          </div>
-         <span className="subtitle">A-Z Shopping Market</span>
       </Link>
    );
 };

@@ -8,7 +8,7 @@ const Header = () => {
    return (
       <div className="flex mb-3 px-3">
          <div className="w-full grid grid-cols-1 sm:grid-cols-12 gap-4">
-            <div className="col-span-1 sm:col-span-2 flex justify-start m-auto">
+            <div className="col-span-1 sm:col-span-2 flex justify-between items-end m-auto">
                <Logo />
             </div>
 

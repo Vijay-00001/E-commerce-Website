@@ -3,7 +3,7 @@
 }
 
 .slide-image {
-   @apply w-full h-full object-cover rounded-[10px] shadow-[0_15px_30px_rgba(0,0,0,0.5)];
+   @apply w-full h-full object-cover rounded-[10px] shadow-box-shadow;
 }
 
 .swiper-pagination-bullet {
@@ -19,8 +19,7 @@
 }
 
 .custom-dark-background {
-   @apply absolute top-0 left-0 w-full h-full;
-   background: rgba(0, 0, 0, 0.3);
+   @apply absolute top-0 left-0 w-full h-full bg-black;
 }
 
 .custom-swiper-button-prev,

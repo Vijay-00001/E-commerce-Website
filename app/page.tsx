@@ -10,7 +10,7 @@ export default function Home() {
          {/* <h1>Ecommerce Website</h1>
       <h2>Shree Ganeshay namah:</h2> */}
          {/* <Experiance /> */}
-         <div className="container bg-white rounded-lg pt-3 pb-5 mt-3 shadow-box-shadow">
+         <div className="container bg-white rounded-lg pt-3 pb-5 mt-3 shadow-blur">
             <Header />
             <Navigation />
          </div>

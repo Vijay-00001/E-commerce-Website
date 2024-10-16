@@ -70,7 +70,7 @@ const Location = () => {
          </DialogTrigger>
 
          {!countriesLoading && (
-            <DialogContent>
+            <DialogContent className="bg-white border-none">
                <DialogHeader>
                   <h3 className="dialog-title">
                      Choose Your Delivery Location
