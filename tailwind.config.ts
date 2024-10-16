@@ -75,6 +75,7 @@ const config: Config = {
          },
          boxShadow: {
             'box-shadow': '0 15px 30px rgba(0, 0, 0, 0.3)',
+            'inner-box-shadow': 'inset 0px 0px 11px rgba(0, 0, 0, 0)',
          },
       },
    },

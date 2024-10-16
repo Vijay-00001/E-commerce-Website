@@ -31,7 +31,7 @@ const MySwiper = () => {
          autoplay={{ delay: 3000 }}
          pagination={{ clickable: true }}
          navigation={{
-            prevEl: '.custom-swiper-button-prev', // Custom classes
+            prevEl: '.custom-swiper-button-prev',
             nextEl: '.custom-swiper-button-next',
          }}
          effect="fade"

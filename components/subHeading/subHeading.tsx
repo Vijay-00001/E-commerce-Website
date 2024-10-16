@@ -1,21 +1,37 @@
 import React, { FC } from 'react';
 import '@/components/subHeading/subHeading.css';
-import { Button } from '@/components/ui/button';
+import { Button as UIButton } from '@/components/ui/button';
 import Image from 'next/image';
-import { IoArrowForwardOutline } from 'react-icons/io5';
+import { IoArrowForwardOutline, IoCartOutline } from 'react-icons/io5'; // Importing icons
+import {
+   NavigationMenu,
+   NavigationMenuItem,
+   NavigationMenuLink,
+   NavigationMenuList,
+   navigationMenuTriggerStyle,
+} from '../ui/navigation-menu';
+import Link from 'next/link';
+
+export interface ButtonProps {
+   buttonText: string;
+   buttonIcon?: React.ReactNode;
+   onClick?: () => void;
+}
 
 export interface ProductsProps {
    iconSrc: string;
    title: string;
    description: string;
-   buttonText: string;
+   linkText?: string;
+   buttonParts?: ButtonProps[] | ButtonProps;
 }
 
 const SubHeading: FC<ProductsProps> = ({
    iconSrc,
    title,
    description,
-   buttonText,
+   linkText,
+   buttonParts,
 }) => {
    return (
       <div className="w-full py-1">
@@ -33,10 +49,51 @@ const SubHeading: FC<ProductsProps> = ({
                   <p className="product-description">{description}</p>
                </div>
             </div>
-            <Button variant="normal" className="see-all-button">
-               {buttonText}
-               <IoArrowForwardOutline className="subheading-forward-icon" />
-            </Button>
+
+            <div className="flex items-center justify-between">
+               {linkText && (
+                  <NavigationMenu>
+                     <NavigationMenuList className="subheading-menu-list">
+                        <NavigationMenuItem>
+                           <Link href="/" legacyBehavior passHref>
+                              <NavigationMenuLink
+                                 className={`${navigationMenuTriggerStyle()} subheading-menu-link`}
+                              >
+                                 {linkText}
+                              </NavigationMenuLink>
+                           </Link>
+                        </NavigationMenuItem>
+                     </NavigationMenuList>
+                  </NavigationMenu>
+               )}
+
+               {Array.isArray(buttonParts)
+                  ? buttonParts.map((button, index) => (
+                       <UIButton
+                          key={index}
+                          variant="normal"
+                          className="view-all-button"
+                          onClick={button.onClick}
+                       >
+                          {button.buttonText}
+                          {button.buttonIcon && (
+                             <span>{button.buttonIcon}</span>
+                          )}
+                       </UIButton>
+                    ))
+                  : buttonParts && (
+                       <UIButton
+                          variant="normal"
+                          className="view-all-button"
+                          onClick={buttonParts.onClick}
+                       >
+                          {buttonParts.buttonText || 'View All'}
+                          {buttonParts.buttonIcon && (
+                             <span>{buttonParts.buttonIcon}</span>
+                          )}
+                       </UIButton>
+                    )}
+            </div>
          </div>
       </div>
    );

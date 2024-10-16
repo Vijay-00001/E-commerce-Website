@@ -1,8 +1,6 @@
 .location {
    @apply max-w-full w-40 text-skyDark flex justify-between items-baseline p-1 rounded-lg duration-300 font-bold relative overflow-hidden cursor-pointer border-b-2;
    transition: transform 0.3s ease;
-   white-space: nowrap;
-   text-overflow: ellipsis;
 }
 
 .location:hover {
