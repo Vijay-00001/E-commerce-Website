@@ -8,7 +8,7 @@ interface FeaturedCategoriesProps {}
 
 const FeaturedCategories: React.FC<FeaturedCategoriesProps> = () => {
    return (
-      <div className="w-full">
+      <div className="w-full my-7">
          <SubHeading
             iconSrc={Best_Selling_Icon.src}
             title="Best Selling"

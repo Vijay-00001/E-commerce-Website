@@ -1,6 +1,6 @@
-import Header from '@/components/Header';
-import Navigation from '@/components/Navigation';
-import HomeComponent from '@/components/Home/HomeComponent';
+import Header from '@/components/header';
+import Navigation from '@/components/navigation';
+import HomeComponent from '@/components/home/HomeComponent';
 import Swiper from '@/components/swiper/Swiper';
 import Experiance from '@/components/experience/experiance';
 
@@ -14,10 +14,10 @@ export default function Home() {
             <Header />
             <Navigation />
          </div>
-         <div className="container bg-black rounded-lg my-3 py-4 shadow-[15px_15px_21px_rgba(0,0,0,0.5)] ">
+         <div className="container my-7 rounded-lg">
             <Swiper />
          </div>
-         <div className="container bg-white my-5 rounded-lg max-h-max">
+         <div className="container my-7 rounded-lg">
             <HomeComponent />
          </div>
       </>

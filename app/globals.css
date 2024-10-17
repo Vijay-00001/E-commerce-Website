@@ -211,16 +211,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-   width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-   background: linear-gradient(135deg, #fa4860, #fce54b);
-   border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-   background: linear-gradient(135deg, #f3030e, #fce54b);
+   width: 0px;
 }
 
 @layer base {
@@ -233,5 +224,5 @@ body {
 }
 
 .container {
-   @apply mx-auto w-full max-w-7xl px-4;
+   @apply mx-auto w-full max-w-7xl;
 }

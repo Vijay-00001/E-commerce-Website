@@ -1,12 +1,16 @@
 import React from 'react';
-import BestSellingSection from '@/components/Home/bestSellingSection/BestSellingSection';
-import FeaturedCategories from '@/components/Home/featuredCategories/FeaturedCategories';
+import BestSellingSection from '@/components/home/bestSellingSection/BestSellingSection';
+import FeaturedCategories from '@/components/home/featuredCategories/FeaturedCategories';
+import VerticalCardLayout from '../cards/verticalCardLayout/VerticalCardLayout';
+import HorizontalCardLayout from '../cards/horizontalCardLayout/HorizontalCardLayout';
 
 const HomeComponent = () => {
    return (
-      <div className="w-full px-11 py-7 min-h-min">
+      <div className="w-full my-7">
          <BestSellingSection />
          <FeaturedCategories />
+         <VerticalCardLayout />
+         <HorizontalCardLayout />
       </div>
    );
 };

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import DataProvider from '@/components/DataProvider/DataProvider';
+import DataProvider from '@/components/dataProvider/DataProvider';
 import { Roboto, Poppins } from 'next/font/google';
 
 const roboto = Roboto({

@@ -1,9 +1,9 @@
 .my-swiper {
-   @apply relative w-full h-[201px] max-h-[500px] rounded-[5px] pb-[30px] shadow-inner-box-shadow;
+   @apply relative w-full h-[201px] max-h-[500px] rounded-lg pb-[30px] shadow-box-shadow;
 }
 
 .slide-image {
-   @apply w-full h-full object-cover rounded-[10px] shadow-box-shadow;
+   @apply w-full h-full object-cover rounded-lg shadow-box-shadow;
 }
 
 .swiper-pagination-bullet {

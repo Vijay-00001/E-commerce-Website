@@ -1,5 +1,5 @@
 .product-card-heading {
-   @apply flex justify-between items-center bg-white px-4 pb-2 rounded-lg cursor-pointer transition-transform duration-200 ease-in-out border-b-2;
+   @apply flex justify-between items-center bg-white px-4 py-2 rounded-lg cursor-pointer transition-transform duration-200 ease-in-out shadow-box-shadow;
 }
 
 .product-card-heading:hover {
