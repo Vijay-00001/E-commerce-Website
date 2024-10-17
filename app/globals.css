@@ -25,6 +25,7 @@ body {
       --blur-gray: rgba(0, 0, 0, 0.5);
       --light-gray: #e0e0e0;
       --heay-gray: #646161;
+      --star: #ff8800;
 
       /* Text Shadow */
       --main-text: 1px 1px 2px rgba(0, 0, 0, 0.5);

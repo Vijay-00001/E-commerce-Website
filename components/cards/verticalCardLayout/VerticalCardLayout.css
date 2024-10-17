@@ -1,0 +1,46 @@
+.line-clamp {
+   display: -webkit-box;
+   line-height: 1.3rem;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.badge {
+   display: inline-block;
+   height: 21px;
+   text-align: center;
+   background-color: #d87c30; /* The orange color */
+   color: white;
+   font-size: 14px;
+   font-weight: bold;
+   padding: 4px 10px;
+   border-radius: 5px 0 0 5px;
+   position: relative;
+   margin: auto;
+}
+.badge::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: -9px; /* Adjust according to triangle size */
+   width: 0;
+   height: 0;
+   border-top: 0px solid transparent;
+   border-bottom: 13px solid transparent;
+   border-left: 10px solid #d87c30; /* Orange triangle */
+}
+
+.badge::before {
+   content: '';
+   position: absolute;
+   top: 70%;
+   transform: translateY(-50%);
+   right: -9px; /* Adjust according to triangle size */
+   width: 0;
+   height: 0;
+   border-bottom: 0px solid transparent;
+   border-top: 13px solid transparent;
+   border-left: 10px solid #d87c30; /* Orange triangle */
+}

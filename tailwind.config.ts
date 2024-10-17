@@ -59,6 +59,7 @@ const config: Config = {
             blurGray: 'var(--blur-gray)',
             lightGray: 'var(--light-gray)',
             heayGray: 'var(--heay-gray)',
+            star: 'var(--star)',
          },
          fontFamily: {
             inter: ['Inter', 'sans-serif'],
