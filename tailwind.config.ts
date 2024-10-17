@@ -60,6 +60,12 @@ const config: Config = {
             lightGray: 'var(--light-gray)',
             heayGray: 'var(--heay-gray)',
             star: 'var(--star)',
+            neoneBlue: 'var(--neon-blue)',
+            neoneGreen: 'var(--neon-green)',
+            neoneRed: 'var(--neon-red)',
+            neonePurple: 'var(--neon-purple)',
+            neoneYellow: 'var(--neon-yellow)',
+            neoneOrange: 'var(--neon-orange)',
          },
          fontFamily: {
             inter: ['Inter', 'sans-serif'],

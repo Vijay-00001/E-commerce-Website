@@ -8,39 +8,26 @@
 }
 
 .badge {
-   display: inline-block;
-   height: 21px;
-   text-align: center;
-   background-color: #d87c30; /* The orange color */
-   color: white;
-   font-size: 14px;
-   font-weight: bold;
-   padding: 4px 10px;
+   @apply inline-block relative h-[21px] text-white text-[14px] text-center bg-skyDark font-bold px-1 m-auto;
    border-radius: 5px 0 0 5px;
-   position: relative;
-   margin: auto;
 }
 .badge::after {
+   @apply absolute top-0 -right-[9px] w-0 h-0;
    content: '';
-   position: absolute;
-   top: 0;
-   right: -9px; /* Adjust according to triangle size */
-   width: 0;
-   height: 0;
    border-top: 0px solid transparent;
    border-bottom: 13px solid transparent;
-   border-left: 10px solid #d87c30; /* Orange triangle */
+   border-left: 10px solid var(--sky-dark);
 }
 
 .badge::before {
+   @apply absolute top-[70%] -right-[9px] w-0 h-0 transform -translate-y-1/2;
    content: '';
-   position: absolute;
-   top: 70%;
-   transform: translateY(-50%);
-   right: -9px; /* Adjust according to triangle size */
-   width: 0;
-   height: 0;
    border-bottom: 0px solid transparent;
    border-top: 13px solid transparent;
-   border-left: 10px solid #d87c30; /* Orange triangle */
+   border-left: 10px solid var(--sky-dark);
+}
+
+.origanal-price {
+   font-weight: 900;
+   letter-spacing: -0.01rem;
 }
