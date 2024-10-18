@@ -60,7 +60,7 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
 
          {/* Star Rating Section */}
          {rating && (
-            <div className="w-full h-[4%] px-2 my-1 flex gap-5 text-start items-end bg-inherit">
+            <div className="w-full h-[4%] px-[10px] my-1 flex gap-5 text-start items-end bg-inherit">
                <StarRating rating={rating} totalUsers={totalUsers} />
             </div>
          )}
@@ -86,15 +86,17 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
             <span className="text-[15px] text-neoneRed font-bold">
                {discount}
             </span>
-            <span className="flex items-center text-black ml-3 ">
-               <FontAwesomeIcon
-                  icon={faIndianRupeeSign}
-                  className="w-4 h-4 text-black"
-               />
+            <div className="flex items-center text-black ml-3 ">
+               <span className="flex items-start">
+                  <FontAwesomeIcon
+                     icon={faIndianRupeeSign}
+                     className="w-[10px] h-[14px] px-1 text-black"
+                  />
+               </span>
                <span className="h-full text-[18px] font-mono -ml-[3px] -mt-1 origanal-price">
                   {price.toFixed(2)}
                </span>
-            </span>
+            </div>
          </div>
 
          {/* Festival Offer Text */}

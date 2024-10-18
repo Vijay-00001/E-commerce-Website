@@ -1,4 +1,5 @@
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -11,18 +12,17 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
    const totalStars = 5;
    const filledStars = Math.floor(rating);
    const remainingFraction = rating - filledStars;
-
    const fractionalFill = Math.round(remainingFraction * 10) * 10;
 
    return (
       <>
-         <div className="flex">
+         <div className="flex align-middle items-end">
             {/* Render full stars */}
             {Array(filledStars)
                .fill(0)
                .map((_, index) => (
                   <FontAwesomeIcon
-                     icon={faStar}
+                     icon={solidStar}
                      key={index}
                      className="w-5 h-5 text-star"
                   />
@@ -30,20 +30,20 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
 
             {/* Render partial star if needed */}
             {fractionalFill > 0 && (
-               <div className="relative inline-block">
+               <div className="relative flex">
                   {/* Full outlined star as the base */}
                   <FontAwesomeIcon
-                     icon={faStar}
+                     icon={regularStar}
                      className="w-5 h-5 text-star"
                   />
 
-                  {/* Partially filled star (with clip-path) */}
+                  {/* Partially filled star */}
                   <FontAwesomeIcon
-                     icon={faStar}
+                     icon={solidStar}
+                     className="absolute top-0 left-0 w-5 h-5 text-star"
                      style={{
                         clipPath: `inset(0 ${100 - fractionalFill}% 0 0)`, // Clip star based on fraction
                      }}
-                     className="absolute text-star top-0 left-0 w-5 h-5"
                   />
                </div>
             )}
@@ -53,7 +53,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
                .fill(0)
                .map((_, index) => (
                   <FontAwesomeIcon
-                     icon={faStar}
+                     icon={regularStar}
                      key={index}
                      className="w-5 h-5 text-star"
                   />
@@ -61,7 +61,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
          </div>
 
          {/* Rating number */}
-         <span className="text-sm text-skyDark font-semibold">
+         <span className="flex items-end align-end text-sm text-skyDark font-semibold">
             {totalUsers || rating}
          </span>
       </>
