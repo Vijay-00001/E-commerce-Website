@@ -1,6 +1,6 @@
 /* Tailwind CSS with normal CSS variables */
 .account-icon {
-   @apply w-10 h-10 text-[2.1rem] p-1 rounded-full transition-all cursor-pointer text-skyDark border-b-2 duration-300 ease-in-out text-shadow-sub;
+   @apply w-7 h-7 text-[2.1rem] p-1 rounded-full transition-all cursor-pointer text-skyDark border-b-2 duration-300 ease-in-out text-shadow-sub;
 }
 
 .account-icon:hover,

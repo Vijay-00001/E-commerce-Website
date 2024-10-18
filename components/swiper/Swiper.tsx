@@ -19,8 +19,8 @@ import Image_2 from '@/public/Products/image_2.jpg';
 import Image_3 from '@/public/Products/image_3.jpg';
 import Image_4 from '@/public/Products/image_4.jpg';
 import Image_5 from '@/public/Products/image_5.jpg';
-import { IoChevronForwardOutline } from 'react-icons/io5';
-import { IoChevronBackOutline } from 'react-icons/io5';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const MySwiper = () => {
    return (
@@ -87,10 +87,10 @@ const MySwiper = () => {
          <div className="custom-dark-background"></div>
 
          <div className="custom-swiper-button-prev">
-            <IoChevronBackOutline />
+            <FontAwesomeIcon icon={faAngleLeft} />
          </div>
          <div className="custom-swiper-button-next">
-            <IoChevronForwardOutline />
+            <FontAwesomeIcon icon={faAngleRight} />
          </div>
       </SwiperComponent>
    );

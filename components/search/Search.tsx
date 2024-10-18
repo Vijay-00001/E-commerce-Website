@@ -1,6 +1,7 @@
 import '@/components/search/Search.css';
 import { useEffect, useState } from 'react';
-import { IoMdSearch } from 'react-icons/io';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from 'react-hook-form';
 import { debounce } from 'lodash';
 
@@ -59,7 +60,7 @@ const SearchBar = ({
             placeholder={placeholder}
             className="main-search-input"
          />
-         <IoMdSearch className="search-button" />
+         <FontAwesomeIcon icon={faMagnifyingGlass} className="search-button" />
          {filteredSuggestions.length > 0 && (
             <ul className="suggestions-list">
                {filteredSuggestions.map((suggestion, index) => (

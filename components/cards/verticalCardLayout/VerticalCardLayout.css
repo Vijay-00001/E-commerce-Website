@@ -1,14 +1,15 @@
 .line-clamp {
    display: -webkit-box;
-   line-height: 1.3rem;
+   line-height: 1.1rem;
    -webkit-line-clamp: 4;
    -webkit-box-orient: vertical;
    overflow: hidden;
    text-overflow: ellipsis;
+   font-weight: 700;
 }
 
 .badge {
-   @apply inline-block relative h-[21px] text-white text-[14px] text-center bg-skyDark font-bold px-1 m-auto;
+   @apply inline-block relative h-[21px] text-white text-[14px] text-center bg-skyDark font-bold px-2 m-auto;
    border-radius: 5px 0 0 5px;
 }
 .badge::after {
@@ -30,4 +31,8 @@
 .origanal-price {
    font-weight: 900;
    letter-spacing: -0.01rem;
+}
+
+.prime-text {
+   font-weight: 700;
 }

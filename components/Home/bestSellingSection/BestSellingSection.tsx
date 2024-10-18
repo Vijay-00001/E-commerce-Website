@@ -3,8 +3,9 @@ import '@/components/Home/bestSellingSection/BestSellingSection.css';
 import Image from 'next/image';
 import Best_Selling_Icon from '@/public/Images/best-selling-icon.png';
 import SubHeading from '@/components/subHeading/subHeading';
-import { IoArrowForwardOutline } from 'react-icons/io5';
 import Coupens from '@/public/Offers/coupen.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const BestSellingSection = () => {
    return (
@@ -35,7 +36,10 @@ const BestSellingSection = () => {
                      {
                         buttonText: 'View All',
                         buttonIcon: (
-                           <IoArrowForwardOutline className="subheading-forward-icon" />
+                           <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="subheading-forward-icon"
+                           />
                         ),
                      },
                   ]}

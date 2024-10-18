@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import '@/components/subHeading/subHeading.css';
 import { Button as UIButton } from '@/components/ui/button';
 import Image from 'next/image';
-import { IoArrowForwardOutline, IoCartOutline } from 'react-icons/io5'; // Importing icons
 import {
    NavigationMenu,
    NavigationMenuItem,

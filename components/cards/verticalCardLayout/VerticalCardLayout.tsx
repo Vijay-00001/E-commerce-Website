@@ -3,9 +3,9 @@ import '@/components/cards/verticalCardLayout/VerticalCardLayout.css';
 import Image from 'next/image';
 import ProductImage from '@/public/Products/image_2.jpg';
 import StarRating from '@/components/starRating/StarRating';
-import { FaCheck } from 'react-icons/fa6';
-import { BiRupee } from 'react-icons/bi';
 import { cn } from '@/lib/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
 
 type VerticalCardLayoutProps = {
    productImage?: string;
@@ -53,7 +53,7 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
          </div>
 
          {/* Product Description */}
-         <div className="w-full h-[19%] overflow-hidden text-ellipsis px-2 my-1 text-lg font-serif text-start line-clamp">
+         <div className="w-full h-[16%] overflow-hidden text-ellipsis px-2 my-1 text-md font-thin text-start line-clamp">
             Lorem, ipsum dolor sit amet consec adipisicing elit. Rerum facere
             itaque accusamus...
          </div>
@@ -82,12 +82,15 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
          )}
 
          {/* Discount and Price Section */}
-         <div className="flex w-full h-[5%] px-3 my-[2px] text-start bg-inherit">
+         <div className="flex w-full h-[5%] px-3 my-1 text-start bg-inherit">
             <span className="text-[15px] text-neoneRed font-bold">
                {discount}
             </span>
             <span className="flex items-center text-black ml-3 ">
-               <BiRupee className="w-4 h-4 text-black" />
+               <FontAwesomeIcon
+                  icon={faIndianRupeeSign}
+                  className="w-4 h-4 text-black"
+               />
                <span className="h-full text-[18px] font-mono -ml-[3px] -mt-1 origanal-price">
                   {price.toFixed(2)}
                </span>
@@ -104,7 +107,7 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
          )}
 
          {/* Original Price and Delivery Date */}
-         <div className="w-full h-[4%] px-3 my-[2px] text-start bg-inherit">
+         <div className="w-full h-[4%] px-3 mt-1 mb-[2px] text-start bg-inherit">
             <div className="text-[11px] text-heayGray font-medium">
                M.R.P
                <span className="text-[12px] ml-1 font-mono line-through">
@@ -113,22 +116,27 @@ const VerticalCardLayout: React.FC<VerticalCardLayoutProps> = ({
             </div>
          </div>
 
-         <div className="w-full h-[6%] px-3 text-start bg-inherit">
-            <div className="text-[11px] text-heayGray font-medium">
+         <div className="w-full h-[7%] px-3 -mt-1 text-start bg-inherit">
+            <div className="text-[11px] text-heayGray  overflow-hidden text-ellipsis line-clamp-1 font-medium">
                Get it by <span className="font-bold">{deliveryDate}</span>
             </div>
-            <div className="text-[11px] text-heayGray">
+            <div className="text-[11px] text-heayGray  overflow-hidden text-ellipsis line-clamp-1">
                FREE Delivery by Market
             </div>
          </div>
 
          {/* Prime Badge (optional) */}
          {primeEligible && (
-            <div className="w-full h-[4%] px-3 mt-[2px] text-start bg-inherit flex">
+            <div className="w-full h-[4%] px-3 mt-0 text-start bg-inherit flex">
                <span className="h-full mt-1 mr-2">
-                  <FaCheck className="w-4 h-4 text-heayGray" />
+                  <FontAwesomeIcon
+                     icon={faCheck}
+                     className="w-4 h-4 text-heayGray"
+                  />
                </span>
-               <span className="text-neoneBlue font-bold">Prime</span>
+               <span className="text-primeBlue font-bold text-shadow-sub prime-text">
+                  Prime
+               </span>
             </div>
          )}
       </div>

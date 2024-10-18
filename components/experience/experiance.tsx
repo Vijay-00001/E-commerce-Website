@@ -9,7 +9,8 @@ import {
    navigationMenuTriggerStyle,
 } from '../ui/navigation-menu';
 import Link from 'next/link';
-import { IoChevronForward, IoChevronBackSharp } from 'react-icons/io5';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Experiance = () => {
    const [scrollPosition, setScrollPosition] = useState(0);
@@ -61,7 +62,8 @@ const Experiance = () => {
       <div className="relative">
          {/* Backward button */}
          {scrollPosition > 0 && (
-            <IoChevronBackSharp
+            <FontAwesomeIcon
+               icon={faAngleLeft}
                className="text-2xl text-primary back-button absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
                onClick={scrollBack}
             />
@@ -88,7 +90,8 @@ const Experiance = () => {
 
          {/* Forward button */}
          {scrollPosition + containerWidth < scrollWidth && (
-            <IoChevronForward
+            <FontAwesomeIcon
+               icon={faAngleRight}
                className="text-2xl text-primary forward-button absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
                onClick={scrollForward}
             />

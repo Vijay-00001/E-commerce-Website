@@ -1,6 +1,5 @@
 import React from 'react';
 import '@/components/Navigation/categoriesButton/CategoriesButton.css';
-import { IoMenu } from 'react-icons/io5';
 import {
    Cloud,
    CreditCard,
@@ -31,7 +30,8 @@ import {
    DropdownMenuSubTrigger,
    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { IoIosArrowDown } from 'react-icons/io';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const CategoriesButton = () => {
    return (
@@ -40,7 +40,10 @@ const CategoriesButton = () => {
             <div className="all-categories">
                <div className="categories-main-label">
                   <span className="categories-title">All Categories</span>
-                  <IoIosArrowDown className="categories-drop-down-icon" />
+                  <FontAwesomeIcon
+                     icon={faAngleDown}
+                     className="categories-drop-down-icon"
+                  />
                </div>
                <span className="categories-sub-label">Total 99 Products</span>
             </div>

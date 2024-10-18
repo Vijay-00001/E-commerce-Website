@@ -1,5 +1,6 @@
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { MdStarOutline, MdStarRate } from 'react-icons/md';
 
 interface StarRatingProps {
    rating: number;
@@ -20,17 +21,25 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
             {Array(filledStars)
                .fill(0)
                .map((_, index) => (
-                  <MdStarRate key={index} className="w-5 h-5 text-star" />
+                  <FontAwesomeIcon
+                     icon={faStar}
+                     key={index}
+                     className="w-5 h-5 text-star"
+                  />
                ))}
 
             {/* Render partial star if needed */}
             {fractionalFill > 0 && (
                <div className="relative inline-block">
                   {/* Full outlined star as the base */}
-                  <MdStarOutline className="w-5 h-5 text-star" />
+                  <FontAwesomeIcon
+                     icon={faStar}
+                     className="w-5 h-5 text-star"
+                  />
 
                   {/* Partially filled star (with clip-path) */}
-                  <MdStarRate
+                  <FontAwesomeIcon
+                     icon={faStar}
                      style={{
                         clipPath: `inset(0 ${100 - fractionalFill}% 0 0)`, // Clip star based on fraction
                      }}
@@ -43,7 +52,11 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
             {Array(totalStars - filledStars - (fractionalFill > 0 ? 1 : 0))
                .fill(0)
                .map((_, index) => (
-                  <MdStarOutline key={index} className="w-5 h-5 text-star" />
+                  <FontAwesomeIcon
+                     icon={faStar}
+                     key={index}
+                     className="w-5 h-5 text-star"
+                  />
                ))}
          </div>
 

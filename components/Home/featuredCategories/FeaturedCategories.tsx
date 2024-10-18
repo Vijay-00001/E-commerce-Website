@@ -1,6 +1,8 @@
 import SubHeading from '@/components/subHeading/subHeading';
 import React from 'react';
-import { IoArrowForwardOutline } from 'react-icons/io5';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 import Best_Selling_Icon from '@/public/Images/best-selling-icon.png';
 import MySwiper from '@/components/swiper/Swiper';
 
@@ -17,7 +19,10 @@ const FeaturedCategories: React.FC<FeaturedCategoriesProps> = () => {
                {
                   buttonText: 'View All',
                   buttonIcon: (
-                     <IoArrowForwardOutline className="subheading-forward-icon" />
+                     <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="subheading-forward-icon"
+                     />
                   ),
                },
             ]}

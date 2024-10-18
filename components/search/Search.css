@@ -8,7 +8,7 @@
 }
 
 .search-button {
-   @apply w-7 h-7 bg-transparent text-blurGray rounded-full absolute left-3 top-1/2 cursor-pointer transition-all duration-300 ease-in-out transform -translate-y-1/2 text-shadow-main;
+   @apply w-5 h-5 bg-transparent text-blurGray rounded-full absolute left-3 top-1/2 cursor-pointer transition-all duration-300 ease-in-out transform -translate-y-1/2 text-shadow-main;
 }
 
 .main-search-input:hover,
@@ -19,13 +19,13 @@
 
 .main-search-input:hover + .search-button,
 .main-search-input:hover + .search-button:hover {
-   transform: translateY(-17px);
+   transform: translateY(-13px);
 }
 
 .main-search-input:focus + .search-button,
 .main-search-input:focus-within .search-button {
    @apply text-black;
-   transform: translateY(-17px);
+   transform: translateY(-13px);
 }
 
 .suggestions-list {

@@ -1,5 +1,5 @@
 .location {
-   @apply max-w-full w-40 relative text-skyDark flex justify-between items-baseline p-1 rounded-lg overflow-hidden cursor-pointer border-b-2 transition-all duration-300 ease-in-out font-bold;
+   @apply max-w-full w-40 relative text-skyDark flex justify-between items-baseline p-1 px-[10px] rounded-lg overflow-hidden cursor-pointer border-b-2 transition-all duration-300 ease-in-out font-bold;
    transition: transform 0.3s ease;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .drop-down-icon {
-   @apply my-auto ml-3 text-2xl text-skyDark cursor-pointer;
+   @apply my-auto text-2xl text-skyDark cursor-pointer;
 }
 
 .dialog-title {

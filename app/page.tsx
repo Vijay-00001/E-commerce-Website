@@ -3,6 +3,7 @@ import Navigation from '@/components/navigation';
 import HomeComponent from '@/components/home/HomeComponent';
 import Swiper from '@/components/swiper/Swiper';
 import Experiance from '@/components/experience/experiance';
+import Footer from '@/components/footer/Footer';
 
 export default function Home() {
    return (
@@ -19,6 +20,7 @@ export default function Home() {
          </div>
          <div className="container my-7 rounded-lg">
             <HomeComponent />
+            <Footer />
          </div>
       </>
    );

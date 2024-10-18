@@ -39,14 +39,14 @@
 }
 
 .view-all-button {
-   @apply w-32 flex justify-between ml-4 text-heayGray font-semibold py-2 px-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out border-[3px] border-skyDark;
+   @apply w-32 flex justify-between items-center text-center text-heayGray font-semibold py-2 px-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out border-[3px] border-skyDark;
 }
 
 .subheading-forward-icon {
-   @apply w-5 h-5 text-blurGray transition-all duration-300 ease-in-out;
+   @apply flex w-4 h-4 my-auto text-blurGray transition-all duration-300 ease-in-out;
 }
 
 .view-all-button:hover,
 .view-all-button:hover .subheading-forward-icon {
-   @apply transform scale-105 bg-skyDark text-white shadow-lg;
+   @apply bg-skyDark text-white shadow-lg;
 }

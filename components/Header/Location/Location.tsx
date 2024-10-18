@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useCallback, useEffect } from 'react';
 import '@/components/Header/Location/Location.css';
-import { IoIosArrowDown } from 'react-icons/io';
 import {
    Dialog,
    DialogContent,
@@ -13,6 +12,8 @@ import { useGetCountriesQuery } from '@/redux/api/apiSlice';
 import { useForm } from 'react-hook-form';
 import { debounce } from 'lodash';
 import SearchBar from '@/components/search/Search';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 interface CountryData {
    iso2: string;
@@ -66,7 +67,7 @@ const Location = () => {
                   {searchTerm || 'India'}
                </span>
             </div>
-            <IoIosArrowDown className="drop-down-icon" />
+            <FontAwesomeIcon icon={faAngleDown} className="drop-down-icon" />
          </DialogTrigger>
 
          {!countriesLoading && (

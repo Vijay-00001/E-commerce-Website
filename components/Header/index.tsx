@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from '@/components/Header/logo/Logo';
-import Location from '@/components/Header/location/Location';
-import Search from '@/components/Header/search/Search';
-import AccountAndCart from '@/components/Header/account & cart/AccountAndCart';
+import Logo from '@/components/header/logo/Logo';
+import Location from '@/components/header/location/Location';
+import Search from './search/Search';
+import AccountAndCart from './account & cart/AccountAndCart';
 
 const Header = () => {
    return (
