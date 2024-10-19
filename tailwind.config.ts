@@ -60,6 +60,7 @@ const config: Config = {
             lightGray: 'var(--light-gray)',
             heayGray: 'var(--heay-gray)',
             star: 'var(--star)',
+            danger: 'var(--danger)',
             primeBlue: 'var(--prime-blue)',
             neoneBlue: 'var(--neon-blue)',
             neoneGreen: 'var(--neon-green)',

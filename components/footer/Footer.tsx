@@ -168,7 +168,7 @@ const Footer: React.FC = () => {
                <div className="">
                   <span>Get connected with us on social networks</span>
                </div>
-               <div className="">
+               <div className="flex">
                   {icons.map((icon, index) => (
                      <Link
                         key={index}
@@ -177,7 +177,7 @@ const Footer: React.FC = () => {
                      >
                         <FontAwesomeIcon
                            icon={icon.iconClass}
-                           className="w-7 h-7 p-1 mx-3 rounded-full"
+                           className="w-7 h-7 p-1 mx-3"
                         />
                      </Link>
                   ))}
