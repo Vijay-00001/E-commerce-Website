@@ -1,26 +1,20 @@
 import Header from '@/components/header';
 import Navigation from '@/components/navigation';
-import HomeComponent from '@/components/home/HomeComponent';
-import Swiper from '@/components/swiper/Swiper';
-import Experiance from '@/components/experience/experiance';
-import Footer from '@/components/footer/Footer';
+import HorizontalCardLayout from '@/components/cards/horizontalCardLayout/HorizontalCardLayout';
+import VerticalCardLayout from '@/components/cards/verticalCardLayout/VerticalCardLayout';
 
 export default function Home() {
    return (
       <>
-         {/* <h1>Ecommerce Website</h1>
-      <h2>Shree Ganeshay namah:</h2> */}
-         {/* <Experiance /> */}
+         <h1>Ecommerce Website</h1>
+         <h2>Shree Ganeshay namah:</h2>
          <div className="container bg-white rounded-lg pt-3 pb-5 mt-3 shadow-blur">
             <Header />
             <Navigation />
          </div>
-         <div className="container my-7 rounded-lg">
-            <Swiper />
-         </div>
-         <div className="container my-7 rounded-lg">
-            <HomeComponent />
-            <Footer />
+         <div className="container my-7 rounded-lg flex gap-3">
+            <VerticalCardLayout />
+            <HorizontalCardLayout />
          </div>
       </>
    );

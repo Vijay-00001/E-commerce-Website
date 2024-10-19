@@ -92,7 +92,7 @@ export function NavigationMenuLinks() {
                <NavigationMenuTrigger className="navigation-menu-link">
                   Man
                </NavigationMenuTrigger>
-               <NavigationMenuContent className="bg-gray-100 rounded-lg shadow-lg">
+               <NavigationMenuContent className="rounded-lg shadow-lg">
                   {' '}
                   {/* Background color and margin here */}
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">

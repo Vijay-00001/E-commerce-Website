@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useLayoutEffect, useState } from 'react';
 import '@/components/cards/horizontalCardLayout/HorizontalCardLayout.css';
 import Image from 'next/image';
 import ProductImage from '@/public/Products/image_2.jpg';
@@ -35,26 +37,58 @@ const HorizontalCardLayout = ({
    primeEligible = true,
    className,
 }: HorizontalCardLayoutProps) => {
+   const [secondDivHeight, setSecondDivHeight] = useState<number>(0);
+
+   // Function to calculate and set the height of the second div dynamically
+   const calculateHeight = () => {
+      const secondDiv = document.querySelector('#secondDiv') as HTMLElement;
+      if (secondDiv) {
+         const newHeight = secondDiv.offsetHeight;
+         setSecondDivHeight(newHeight);
+      }
+   };
+
+   // Use layout effect to calculate the height after the component renders
+   useLayoutEffect(() => {
+      calculateHeight();
+
+      // Add resize listener
+      window.addEventListener('resize', calculateHeight);
+
+      // Cleanup on unmount
+      return () => {
+         window.removeEventListener('resize', calculateHeight);
+      };
+   }, []);
+
    return (
       <div
          className={cn(
-            'w-[60%] h-[18.5rem] max-h-max flex my-5 bg-white rounded-lg overflow-hidden shadow-box-shadow',
+            'min-h-76 max-h-max flex bg-white rounded-lg overflow-hidden shadow-box-shadow',
             className
          )}
       >
          {/* Product Image Section */}
-         <div className="min-w-[221px] min-h-full relative flex justify-center items-center bg-skyDark overflow-hidden cursor-pointer">
+         <div
+            style={{
+               height: secondDivHeight ? `${secondDivHeight}px` : 'auto',
+            }}
+            className="relative min-w-56 flex justify-center items-center bg-skyDark cursor-pointer overflow-hidden"
+         >
             <Image
                src={productImage}
                alt={'Product Image'}
                width={200}
                height={200}
-               className="w-full h-full transition-all duration-300 ease-in-out hover:scale-125"
+               className="w-full h-full object-cover transition-all duration-300 ease-in-out hover:scale-125"
             />
          </div>
-         <div className="min-w-[401px] h-full max-h-max flex flex-col py-2 px-1">
+         <div
+            id="secondDiv"
+            className="min-w-[401px] min-h-72 max-h-max flex flex-col py-2 px-1"
+         >
             {/* Product Description */}
-            <div className="w-full min-h-[51px] h-[51px] text-xl text-start text-ellipsis px-2 py-0 mt-1 overflow-hidden font-thin horizontal-line-clamp cursor-pointer">
+            <div className="w-full text-xl text-start text-ellipsis px-2 py-0 mt-1 font-thin horizontal-line-clamp transition-all duration-300 ease-in-out cursor-pointer hover:text-heayGray">
                Lorem, ipsum dolor sit amet consec adipisicing elit. Rerum facere
                itaque accusamus Lorem, ipsum dolor sit amet consec adipisicing
                elit. Rerum facere itaque accusamus Lorem, ipsum dolor sit amet
@@ -65,13 +99,13 @@ const HorizontalCardLayout = ({
 
             {/* Star Rating Section */}
             {rating && (
-               <div className="min-h-6 h-6 flex gap-3 px-[10px] py-0 mt-[6px] text-start items-end overflow-hidden">
+               <div className="flex gap-3 px-[10px] py-0 mt-[6px] text-start items-end">
                   <StarRating rating={rating} totalUsers={totalUsers} />
                </div>
             )}
 
             {/* Purchase Details */}
-            <div className="w-full h-5 flex items-center px-3 py-0 mt-[2px] text-sm leading-tight text-start overflow-hidden">
+            <div className="w-full h-5 flex items-center px-3 py-0 mt-[2px] text-sm leading-tight text-start">
                <span className="text-[13px] text-heayGray font-bold">51+</span>
                <span className="text-[13px] text-blurGray">
                   {' '}
@@ -81,7 +115,7 @@ const HorizontalCardLayout = ({
 
             {/* Best Seller Badge (optional) */}
             {isBestSeller && (
-               <div className="min-h-7 h-7 px-3 py-0 mt-[2px] text-start overflow-hidden">
+               <div className="px-3 py-0 mt-[2px] text-start">
                   <div className="badge flex items-center cursor-pointer">
                      #1 Best Seller
                   </div>
@@ -89,7 +123,7 @@ const HorizontalCardLayout = ({
             )}
 
             {/* Discount and Price Section */}
-            <div className="min-h-5 h-5 flex align-middle items-center gap-3 px-3 py-0 mt-[2px] overflow-hidden">
+            <div className="flex align-middle items-center gap-3 px-3 py-0 mt-[2px]">
                <span className="text-xl text-danger font-roboto product-discount cursor-pointer">
                   {discount}
                </span>
@@ -111,7 +145,7 @@ const HorizontalCardLayout = ({
                </div>
             </div>
 
-            <div className="h-4 flex items-center gap-3 px-3 mt-1 text-start overflow-hidden">
+            <div className="flex items-center gap-3 px-3 mt-1 text-start">
                <div className="text-[11px] text-heayGray font-bold">
                   10% Off on Select Bank Cards
                </div>
@@ -119,7 +153,7 @@ const HorizontalCardLayout = ({
 
             {/* Festival Offer Text */}
             {festivalText && (
-               <div className="h-11 flex items-center px-3 mt-[2px] text-start overflow-hidden">
+               <div className="flex items-center px-3 mt-[2px] text-start">
                   <span className="bg-skyDark p-1 px-2 text-white text-sm font-serif rounded cursor-pointer">
                      {festivalText}
                   </span>
@@ -128,7 +162,7 @@ const HorizontalCardLayout = ({
 
             {/* Prime Badge (optional) */}
             {primeEligible && (
-               <div className="h-5 flex items-center gap-1 px-3 mt-[2px] text-start bg-inherit overflow-hidden">
+               <div className="flex items-center gap-1 px-3 mt-[2px] text-start bg-inherit">
                   <span className="h-full flex items-center">
                      <FontAwesomeIcon
                         icon={faCheck}
@@ -141,7 +175,7 @@ const HorizontalCardLayout = ({
                </div>
             )}
 
-            <div className="h-3 flex items-center gap-3 px-3 mt-[2px] text-start overflow-hidden">
+            <div className="flex items-center gap-3 px-3 mt-[2px] text-start">
                <div className="text-[11px] text-heayGray font-medium">
                   Get it by <span className="font-bold">{deliveryDate}</span>
                </div>
@@ -151,7 +185,7 @@ const HorizontalCardLayout = ({
             </div>
 
             {/* Original Price and Delivery Date */}
-            <div className="min-h-[14%] flex align-middle items-center px-3 mt-1 text-start overflow-hidden">
+            <div className="flex align-middle items-center px-3 mt-1 text-start">
                <Button
                   variant="default"
                   className="capitalize text-lg font-bold bg-skyDark text-white rounded-full transition-all duration-300 ease-in-out hover:shadow-box-shadow hover:bg-heayGray"
@@ -160,7 +194,7 @@ const HorizontalCardLayout = ({
                </Button>
             </div>
 
-            <div className="min-h-[5.5%] flex items-center gap-3 px-3 mt-1 text-start overflow-hidden">
+            <div className="flex items-center gap-3 px-3 mt-1 text-start">
                <div className="px-3 text-[11px] text-heayGray font-bold underline transition-all duration-300 ease-in-out cursor-pointer hover:text-skyDark">
                   +1 colors/patterns
                </div>

@@ -16,7 +16,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
 
    return (
       <>
-         <div className="flex align-middle items-end">
+         <div className="flex items-end">
             {/* Render full stars */}
             {Array(filledStars)
                .fill(0)
@@ -42,7 +42,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, totalUsers }) => {
                      icon={solidStar}
                      className="absolute top-0 left-0 w-5 h-5 text-star"
                      style={{
-                        clipPath: `inset(0 ${100 - fractionalFill}% 0 0)`, // Clip star based on fraction
+                        clipPath: `inset(0 ${100 - fractionalFill}% 0 0)`,
                      }}
                   />
                </div>
